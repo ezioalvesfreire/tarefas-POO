@@ -58,7 +58,14 @@ public class Elevador {
     
     }
   public void descePassageiro(){
-    int descePassageiro = qtdPassageiro --;
+      
+      if(qtdPassageiro > 0){
+          int descePassageiro = qtdPassageiro --;
+      }else{
+      System.out.println(" O elevador já está vazio!");
+      
+      }
+    
     
     }
   public void status(){

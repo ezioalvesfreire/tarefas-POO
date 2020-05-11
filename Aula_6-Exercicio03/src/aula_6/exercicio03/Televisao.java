@@ -1,14 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aula_6.exercicio03;
 
-/**
- *
- * @author Ezio
- */
 public class Televisao {
+    boolean ligada = true;
+    int volumeMax = 10;
+    int canalMax = 50;
+    int volume = 5;
+    int canal = 12;
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public int getCanal() {
+        return canal;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public void setCanal(int canal) {
+        this.canal = canal;
+    }
+    
+   
     
 }
