@@ -14,10 +14,10 @@ public class Livro extends Produto {
 	}
 	
 	public Livro(String n, double p, String a, int pg) {
-		nome = n;
-		preco = p;
-		autor = a;
-		paginas = pg;
+		this.nome = n;
+		this.preco = p;
+		this.autor = a;
+		this.paginas = pg;
 	}
 	
 	public void VerificaTamanho() {
@@ -30,5 +30,10 @@ public class Livro extends Produto {
 		
 	}
 
-      
+  public void imprimeDados(){
+            System.out.println("Sobre o Livro");
+        
+        
+        }
+    
 }

@@ -10,18 +10,22 @@ public class Produto {
 		return(preco > 100);
 	}
         
-        public double ValorComDesc(double preco,double desconto){
-         // double desconto;
-          // double valorComDesc;
-          double ValorComDesc = 0;
-           
-            // desconto = (preco*porcentagem)/100;
-           // valorComDesc = preco - desconto;
-      //  double ValorComDesc = 0;
-       double valorComDesc = preco - desconto;
-        
-
-      return ValorComDesc;
+        public double ValorFin(double preco,double desconto){
+                   double ValorComDesc = 0;
+                   double valorComDesc = preco - desconto; // desconto em porcentagem >> double valorComDesc = (preco*porcentagem)/100;
+                     return ValorComDesc;
         }
-    
+        
+        //////////////////////////////////////////////////////
+        
+        public void valorFin() {
+	   //	System.out.println("O valor com desconto eh! " + cd1.valorFin());
+	}
+    //////////////////////////////////////
+        public void imprimeDados(double preco, String nome){
+            
+            System.out.println("teste");
+        
+        
+        }
 }
