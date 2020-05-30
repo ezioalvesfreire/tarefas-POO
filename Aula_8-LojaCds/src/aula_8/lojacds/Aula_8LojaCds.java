@@ -10,29 +10,36 @@ public class Aula_8LojaCds {
         // TODO code application logic here
         
        Cd[] arrayCd = new Cd[3];
+       double preco[] = null;
+       double total = 0;
+       
          
-       String cDNome    = JOptionPane.showInputDialog("Digite o nome do CD:");
-       String cDPreco   = JOptionPane.showInputDialog("Digite o Preço:");
-       String cDArtista = JOptionPane.showInputDialog("Digite o Artista:");
+       for (int i = 0; i < arrayCd.length; i++) { 
+        String cDNome    = JOptionPane.showInputDialog("Digite o nome do CD:");
+        String cDPreco   = JOptionPane.showInputDialog("Digite o Preço:");
+        String cDArtista = JOptionPane.showInputDialog("Digite o Artista:");
+        String cDQtd 	  = JOptionPane.showInputDialog("Digite a quantidade que deseja comprar: ");
         
-      
-   
-        arrayCd[0] = new Cd(cDNome, Integer.parseInt(cDPreco), cDArtista);
-        System.out.println("nome" + arrayCd[0].nome);
-        System.out.println("artista" + arrayCd[0].artista);
-        System.out.println("preco" + arrayCd[0].preco);
         
-        cDNome    = JOptionPane.showInputDialog("Digite o nome do CD:");
-        cDPreco   = JOptionPane.showInputDialog("Digite o Preço:");
-        cDArtista = JOptionPane.showInputDialog("Digite o Artista:");
+        arrayCd[i] = new Cd (cDNome, Double.parseDouble(cDPreco), cDArtista, Integer.parseInt(cDQtd));
+      int cDQtd1 = Integer.parseInt(cDQtd);
         
-        arrayCd[1] = new Cd(cDNome, Integer.parseInt(cDPreco), cDArtista);
-        System.out.println("nome" + arrayCd[1].nome);
-        System.out.println("artista" + arrayCd[1].artista);
-        System.out.println("preco" + arrayCd[1].preco);
-        
-    }
-    
+      // total +=  Double.parseDouble(cDPreco);
+      // calculaVenda();
      
+
+      //   arrayCd[i] = new Cd(cDNome, Integer.parseInt(cDPreco), cDArtista);
+         System.out.println("Comprado(s): " + arrayCd[i].quantidade + " CD do: " + arrayCd[i].artista);
+         System.out.println("nome - " + arrayCd[i].nome);
+         System.out.println("artista - " + arrayCd[i].artista);
+         System.out.println("preco - " + arrayCd[i].preco);
+         System.out.println("Valor: " + arrayCd[i].comprarCd(cDQtd1));
+         System.out.println("--------------");
+           
+      }
+      		
+        System.out.println("total eh " + total);
+    }
+         
 
 }

@@ -6,17 +6,18 @@ import java.util.Scanner;
 
 public class Cd {
      String nome;
-     int preco;
+     double preco;
      String artista;
-    int quantidade = 3;
+    int quantidade;
 
-   Cd(String n, int p, String a) {
+   Cd(String n, double p, String a, int q) {
                     nome = n; 
                     preco = p; 
                     artista = a; 
+                    quantidade = q;
             }
     public double comprarCd(int q){
-          int quantidade = q;
+         // int quantidade = q;
           double valorTotal = this.preco * quantidade; 
                        return valorTotal;
 
