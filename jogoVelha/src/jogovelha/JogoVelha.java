@@ -1,6 +1,7 @@
 package jogovelha;
 
 import java.util.Scanner;
+
 public class JogoVelha {
 
     public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class JogoVelha {
 				
 			}while(valida == 0); //finaliza jogada do jogador 1
 			
-			Jogadas++;
+			++Jogadas;
 			valida = 0;
 			jogo.Mostrar();
 			
@@ -57,7 +58,14 @@ public class JogoVelha {
 				break;
 			}
 		}
-		System.out.println("*** PARABÉNS " + jogo.Ganhou(Jogadas) + " É O VENCEDOR!!!!! ***");
+                //criar uma variavel
+              //String vencedor = "";
+              if(jogo.Ganhou(Jogadas) == "VELHA"){
+                    System.out.println("*** ------------DEU VELHA------------------!!!!! ***");
+              }else{
+                    System.out.println("*** PARABÉNS " + jogo.Ganhou(Jogadas) + " É O VENCEDOR!!!!! ***");
+              }
+		
         
     }
     

@@ -1,7 +1,8 @@
+
 package jogovelha;
 
 public class Tabuleiro {
-    //Matriz declarada com posições, encapsulada com private
+   //Matriz declarada com posições, encapsulada com private
 		private String[][] tab = 	{{"1","2","3"}, 
 						{"4","5","6"}, 
 						{"7","8","9"}}; 
@@ -10,7 +11,12 @@ public class Tabuleiro {
 		public String Mostrar() {
 			for(int i = 0; i < 3; i++) {
 				for(int j = 0; j < 3; j++) {
-					System.out.printf("   " + tab [i][j]); //concatena linha e coluna
+                                    if(j<1){  
+                                        System.out.printf("|__" + tab [i][j] + "__|"); //concatena linha e coluna
+                                    }else{
+                                            System.out.printf("__" + tab [i][j] + "__|"); //concatena linha e coluna
+                                    }
+					
 				}
 				System.out.println("\n"); //quebra de linha para mostrar com layout do tabuleiro
 			}
@@ -54,7 +60,7 @@ public class Tabuleiro {
 			String[] T = new String [8];//vetor para checar (T)otal das possibilidades onde jogador pode ganhar
 			String vencedor = "null";
 			if(jogadas == 9) {
-				vencedor = "----------- DEU VELHA!!! -----------";
+				vencedor = "VELHA";
 			}
 			//verificação das linhas
 			T[0] = tab[0][0] + tab[0][1] + tab[0][2];
@@ -79,7 +85,6 @@ public class Tabuleiro {
 			}
 			return vencedor;
 		}
-    
-    
-    
 }
+
+
