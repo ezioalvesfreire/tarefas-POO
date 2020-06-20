@@ -8,7 +8,7 @@ public class Agenda {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner in = new Scanner(System.in); 
+         Scanner in = new Scanner(System.in); 
 		int opcao = 0; 
 		while (opcao != 4) { 
 			System.out.println("Menu de opções:"); 
@@ -22,12 +22,13 @@ public class Agenda {
                          switch(opcao){
             case 1:
                 System.out.println("[1]INSERIR CHAMADA PARA METODO CADASTRAR CONTATO");
+              
                 break;
             case 2:
                 System.out.println("[2]INSERIR CHAMADA PARA O METODO BUSCAR CONTATO");
                 break;
             case 3:
-                System.out.println("[3]INSERIR CHAMADA PARA O METODO IMPRIMIR AGENDA");
+                System.out.println("[3] INSERIR CHAMADA PARA O METODO IMPRIMIR AGENDA");
                 break;
             case 4:
                 System.out.println("SAIR");
@@ -39,8 +40,9 @@ public class Agenda {
         }
 		 }		
 		System.out.println("Fim da Execucao");
-        
-        
-    }
+           
+    }      
+
+  
     
 }
