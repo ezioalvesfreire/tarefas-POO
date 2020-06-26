@@ -20,11 +20,12 @@ public class Agenda {
          
          
          //--------------------------------------------------------
-               //  Contatos[] arrayContato = new Contatos[3];
+               //  Contatos[] arrayContato = new Contatos[30];
 		//int opcao = 0; 
                 String continuar = "S";
                 
-		while (!"4".equals(opcao)) { 
+		while (!"4".equals(opcao))
+                { 
                    
 			System.out.println("Menu de opções:"); 
 			System.out.println("1- Cadastrar Contato"); 
@@ -39,29 +40,29 @@ public class Agenda {
 			//opcao = Integer.parseInt(in.nextLine());  
                         String opcao   = JOptionPane.showInputDialog("Digite uma opção:");
                         
-                         switch(opcao){
+                         switch(opcao)
+                         {
                             
-            case "1":
-               //  String continuar = "S";
-                System.out.println("[1]INSERIR CHAMADA PARA METODO CADASTRAR CONTATO");
-                inserir(continuar);
-              
-                break;
-            case "2":
-                System.out.println("[2]INSERIR CHAMADA PARA O METODO BUSCAR CONTATO");
-                break;
-            case "3":
-                System.out.println("[3] INSERIR CHAMADA PARA O METODO IMPRIMIR AGENDA");
-                break;
-            case "4":
-                System.out.println("SAIR");
-                break;
+                            case "1":
+                                 //  String continuar = "S";
+                                  System.out.println("[1]INSERIR CHAMADA PARA METODO CADASTRAR CONTATO");
+                                  inserir(continuar);
+                                  break;
+                            case "2":
+                                 System.out.println("[2]INSERIR CHAMADA PARA O METODO BUSCAR CONTATO");
+                                 break;
+                            case "3":
+                                  System.out.println("[3] INSERIR CHAMADA PARA O METODO IMPRIMIR AGENDA");
+                                break;
+                            case "4":
+                                 System.out.println("SAIR");
+                                 break;
                 
-            default:
-                System.out.println("Digite SOMENTE números entre 1 e 4");
-                break;
-        }
-		 }		
+                            default:
+                                 System.out.println("Digite SOMENTE números entre 1 e 4");
+                                 break;
+                     }
+		}		
 		System.out.println("Fim da Execucao");
                 
 //--------------------------------------------------------------------------------
@@ -69,7 +70,7 @@ public class Agenda {
     
                 while(continuar.equals("S") ){ 
          int i =0;
-         Contatos[] arrayContato = new Contatos[3];
+         Contatos[] arrayContato = new Contatos[30];
       
         String contatoNome    = JOptionPane.showInputDialog("Digite o nome:");
         String contatoNumFone   = JOptionPane.showInputDialog("Digite o numero do telefone:");
@@ -90,22 +91,20 @@ public class Agenda {
                 
     
     }    
-         
-
-
-//-------------------------------------------------------------------------------- 
- public buscar(String nome){
-        for (int i=0; i<arrayContato; i++){
-            if (contato[i].getNome().equalsIgnoreCase(nome)){
+         //-------------------------------------------------------------------------------- 
+ public buscar(String nome)
+    {
+        for (int i=0; i<arrayContato; i++)
+        {
+            if (contato[i].getNome().equalsIgnoreCase(nome))
+            {
             return contatos[i];
+            }
         }
-    }
     return null;
     }
-//-------------------------------------------------------------------------------- 
+          //-------------------------------------------------------------------------------- 
            
-    }      
+  }      
 
-  
-    
 }
