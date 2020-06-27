@@ -1,28 +1,23 @@
 package agenda;
 
+
 import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 public class Agenda {
-
-   // Scanner input = new Scanner(System.in);
      Scanner in = new Scanner(System.in); 
-      //   String continuar = "S";
-      //String opcao = "0";
-          
+     static Contatos[] arrayContato = new Contatos[30];
+     static int tamanhoArray = 0; 
+     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         String opcao = "0";
-         
+       
          //----------------------------------------------------------
-         
-         
-         //--------------------------------------------------------
-               //  Contatos[] arrayContato = new Contatos[30];
-		//int opcao = 0; 
-                String continuar = "S";
+        String continuar = "S";
                 
 		while (!"4".equals(opcao))
                 { 
@@ -38,18 +33,19 @@ public class Agenda {
                      //   String opcao = in.next();
                       //  opcao = Integer.parseInt(in.nextLine());
 			//opcao = Integer.parseInt(in.nextLine());  
-                        String opcao   = JOptionPane.showInputDialog("Digite uma opção:");
+                        opcao   = JOptionPane.showInputDialog("Digite uma opção:");
                         
                          switch(opcao)
                          {
                             
-                            case "1":
-                                 //  String continuar = "S";
+                            case "1":    
                                   System.out.println("[1]INSERIR CHAMADA PARA METODO CADASTRAR CONTATO");
                                   inserir(continuar);
+                                  tamanhoArray++; 
                                   break;
                             case "2":
                                  System.out.println("[2]INSERIR CHAMADA PARA O METODO BUSCAR CONTATO");
+                                 buscar();
                                  break;
                             case "3":
                                   System.out.println("[3] INSERIR CHAMADA PARA O METODO IMPRIMIR AGENDA");
@@ -62,49 +58,35 @@ public class Agenda {
                                  System.out.println("Digite SOMENTE números entre 1 e 4");
                                  break;
                      }
+                         
+                         
+                         
 		}		
 		System.out.println("Fim da Execucao");
-                
+    }      
+         
 //--------------------------------------------------------------------------------
- public void inserir(String continuar){ //, String nome, String numFone
+ public static void inserir(String continuar){ //, String nome, String numFone
     
-                while(continuar.equals("S") ){ 
-         int i =0;
-         Contatos[] arrayContato = new Contatos[30];
+        
       
         String contatoNome    = JOptionPane.showInputDialog("Digite o nome:");
         String contatoNumFone   = JOptionPane.showInputDialog("Digite o numero do telefone:");
        
         
-        arrayContato[i] = new Contatos (contatoNome, contatoNumFone);
-        
-     
-         //System.out.println("Nome" + arrayContato[i].nome + " Fone: " + arrayContato[i].numFone);
-          System.out.println("nome - " + arrayContato[i].getNome());
-         System.out.println("artista - " + arrayContato[i].getNumFone());
-         System.out.println("--------------");
-         ++i;
-         
-      continuar    = JOptionPane.showInputDialog("Deseja continuar adicionando na agenda[ S/N ]?"); 
-     // continuar.toUpperCase();
+        arrayContato[tamanhoArray] = new Contatos(contatoNome, contatoNumFone);
       }
-                
-    
-    }    
-         //-------------------------------------------------------------------------------- 
- public buscar(String nome)
-    {
-        for (int i=0; i<arrayContato; i++)
-        {
-            if (contato[i].getNome().equalsIgnoreCase(nome))
-            {
-            return contatos[i];
-            }
-        }
-    return null;
-    }
-          //-------------------------------------------------------------------------------- 
-           
-  }      
-
+ 
+ public static void buscar(){ //, String nome, String numFone
+	    
+     
+     
+     String contatoNome    = JOptionPane.showInputDialog("Digite o nome:");
+     for(int i = 0; i <= tamanhoArray; ++i){
+         if(arrayContato[i] == contatoNome){
+        // System.out.println( String nome + String numFone );
+     }
+       
+   }
+ }
 }
