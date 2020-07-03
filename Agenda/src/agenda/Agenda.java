@@ -39,16 +39,14 @@ public class Agenda {
                          {
                             
                             case "1":    
-                                  System.out.println("[1]INSERIR CHAMADA PARA METODO CADASTRAR CONTATO");
                                   inserir(continuar);
                                   tamanhoArray++; 
                                   break;
                             case "2":
-                                 System.out.println("[2]INSERIR CHAMADA PARA O METODO BUSCAR CONTATO");
-                                 buscar();
+                                  buscar();
                                  break;
                             case "3":
-                                  System.out.println("[3] INSERIR CHAMADA PARA O METODO IMPRIMIR AGENDA");
+                                  listarTodos(); 
                                 break;
                             case "4":
                                  System.out.println("SAIR");
@@ -92,4 +90,27 @@ public class Agenda {
        
      }
   }
+ //-----------------------------------------------------------------------------------
+ 
+ public static void listarTodos() {
+
+	if (tamanhoArray == 0) {
+		System.out.println("A agenda está vazia!");
+		
+	} else {
+		for (int i = 0; i < tamanhoArray; i++) {
+						
+			System.out.println("Nome: " + arrayContato[i].getNome());
+			System.out.println("Telefone: " + arrayContato[i].getNumFone()); 
+                        System.out.println("------------------------------");
+			
+
+		}
+	}
+
+}
+ 
+ //--------------------------------------------------------------------------------
+ 
+ 
 }
