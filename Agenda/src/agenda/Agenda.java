@@ -66,7 +66,7 @@ public class Agenda {
     }      
          
 //--------------------------------------------------------------------------------
- public static void inserir(String continuar){ //, String nome, String numFone
+ public static void inserir(String continuar){ 
     
         
       
@@ -77,16 +77,19 @@ public class Agenda {
         arrayContato[tamanhoArray] = new Contatos(contatoNome, contatoNumFone);
       }
  
- public static void buscar(){ //, String nome, String numFone
+ public static void buscar()
+  { 
 	    
-     
-     
      String contatoNome    = JOptionPane.showInputDialog("Digite o nome:");
-     for(int i = 0; i <= tamanhoArray; ++i){
-         if(arrayContato[i] == contatoNome){
-        // System.out.println( String nome + String numFone );
-     }
+     for(int i = 0; i <= tamanhoArray; ++i)
+     {
+       if(arrayContato[i].getNome().equals(contatoNome))
+         {
+             System.out.println(arrayContato[i].getNome() + arrayContato[i].getNumFone()); 
+         }else{
+                System.out.println("contato não encontrado");
+              }
        
-   }
- }
+     }
+  }
 }
