@@ -100,8 +100,9 @@ public class Agenda {
 	} else {
 		for (int i = 0; i < tamanhoArray; i++) {
 						
-			System.out.println("Nome: " + arrayContato[i].getNome());
+			
 			System.out.println("Telefone: " + arrayContato[i].getNumFone()); 
+                        System.out.println("Nome: " + arrayContato[i].getNome());
                         System.out.println("------------------------------");
 			
 
