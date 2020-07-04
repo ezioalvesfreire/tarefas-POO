@@ -78,12 +78,13 @@ public class Agenda {
  public static void buscar()
   { 
 	    
-     String contatoNome    = JOptionPane.showInputDialog("Digite o nome:");
-     for(int i = 0; i <= tamanhoArray; ++i)
+     String contatoNome    = JOptionPane.showInputDialog("Digite o nome para fazer a busca:");
+     for(int i = 0; i < tamanhoArray; ++i)
      {
        if(arrayContato[i].getNome().equals(contatoNome))
          {
-             System.out.println(arrayContato[i].getNome() + arrayContato[i].getNumFone()); 
+             System.out.println("NOME:" + arrayContato[i].getNome()+ " " + "FONE:" + arrayContato[i].getNumFone());
+              System.out.println("------------------------------");
          }else{
                 System.out.println("contato não encontrado");
               }
@@ -100,7 +101,6 @@ public class Agenda {
 	} else {
 		for (int i = 0; i < tamanhoArray; i++) {
 						
-			
 			System.out.println("Telefone: " + arrayContato[i].getNumFone()); 
                         System.out.println("Nome: " + arrayContato[i].getNome());
                         System.out.println("------------------------------");
