@@ -4,8 +4,7 @@ public class ComputadorDeBordo {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        veiculo carro1 = new veiculos("Gol", "Branco", "2002", 0, 45.0)
-        );
+        Veiculo carro1 = new Veiculo("Gol", "Branco", "2002", 0, 45.0, 0);
          viagemCarro viagemCarro1 = new viagemCarro("Joinville", "Florianopolis", 250);
         carro1.percorrer();
 

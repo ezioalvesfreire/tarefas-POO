@@ -63,7 +63,7 @@ public class ViagemCarro {
         this.gastoDeCombustivel(velocidadeAtual);
         this.combustivelNoTanque();
         if (combustivel <= 5) {
-            reabastecer();
+            this.reabastecer();
         }
 
     }
