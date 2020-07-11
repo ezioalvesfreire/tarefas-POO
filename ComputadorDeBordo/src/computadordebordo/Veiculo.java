@@ -1,14 +1,15 @@
 package computadordebordo;
 
 public class Veiculo {
+
     private String modelo;
     private String cor;
     private String ano;
-    private double velocidadeAtual; 
+    private double velocidadeAtual;
     private double combustivel; // em litros
-    private boolean esportivo;
+    private boolean esportivo = false;
 
-     public Veiculo(String modelo, String cor, String ano, double velocidadeAtual, double combustivel, boolean esportivo) {
+    public Veiculo(String modelo, String cor, String ano, double velocidadeAtual, double combustivel, boolean esportivo) {
         this.modelo = modelo;
         this.cor = cor;
         this.ano = ano;
@@ -56,73 +57,91 @@ public class Veiculo {
     public void setCombustivel(double combustivel) {
         this.combustivel = combustivel;
     }
-    
-       public boolean isEsportivo() {
+
+    public boolean isEsportivo() {
         return esportivo;
     }
 
     public void setEsportivo(boolean esportivo) {
         this.esportivo = esportivo;
     }
-    
-    
-    
-    public double gastoDeCombustivel(double velocidadeAtual, boolean turboLigado){
-       double consumo = 0;
-  if(velocidadeAtual >= 0  && velocidadeAtual <= 80){
-          consumo = 0.4;
-     }else if(velocidadeAtual > 80 && velocidadeAtual <= 120){
-         consumo = 0.3;
-     }else if(velocidadeAtual > 120){
-         consumo = 0.6;
-     }
-  if(getTurboLigado() == true){
-       consumo = consumo * 2;
-     }
+
+    public double gastoDeCombustivel(double velocidadeAtual, boolean turboLigado) {
+        double consumo = 0;
+
+        if (esportivo == true) {
+            if (velocidadeAtual >= 0 && velocidadeAtual <= 80) {
+                consumo = 0.4;
+            } else if (velocidadeAtual > 80 && velocidadeAtual <= 120) {
+                consumo = 0.3;
+            } else if (velocidadeAtual > 120) {
+                consumo = 0.6;
+            }
+            if (isTurboLigado() == true) {
+                consumo = consumo * 2;
+            }
+          //  return consumo;
+
+        } else {
+            if (velocidadeAtual >= 0 && velocidadeAtual <= 80) {
+                consumo = 0.2;
+            } else if (velocidadeAtual > 80 && velocidadeAtual <= 120) {
+                consumo = 0.1;
+            } else if (velocidadeAtual > 120) {
+                consumo = 0.4;
+            }
+
+        }
         return consumo;
-   }
-    
-    
-    double combustivelNoTanque(double consumo){
-       getCombustivel() - consumo;
-       
-         return combustivel;
+
     }
-   
-    double reabastecer(){
-        combustivel = capacidadeMax - combustivel;
+
+    double combustivelNoTanque() {
+        getCombustivel();
+
+        return combustivel;
+    }
+
+    double reabastecer() {
+
+        if (esportivo == true) {
+            combustivel = 35;
+
+        } else {
+            combustivel = 45;
+        }
         System.out.println("Reabastecido!!!");
         return combustivel;
-    
+
     }
-    double atualizaVelocidade(){
-        
-        if(veiculo == carroEsportivo){
-          if(distanciaPercorrida <= 50){
-              velocidadeAtual = 80;
-          }else if(distanciaPercorrida >= 51 && <= 150){
-              turbo = true;
-              velocidadeAtual = 150;
-              
-          }else if(distanciaPercorrida > 150 ){
-              velocidadeAtual = 100;
-          }
-        
-        }else{
-            if(distanciaPercorrida <= 50){
+
+    double atualizaVelocidade() {
+
+        if (veiculo == carroEsportivo) {
+            if (distanciaPercorrida <= 50) {
                 velocidadeAtual = 80;
-            }else if(distanciaPercorrida >50 && <= 150 ){
+            } else if (distanciaPercorrida >= 51 &&  <= 150) {
+                turbo = true;
+                velocidadeAtual = 150;
+
+            } else if (distanciaPercorrida > 150) {
+                velocidadeAtual = 100;
+            }
+
+        } else {
+            if (distanciaPercorrida <= 50) {
+                velocidadeAtual = 80;
+            } else if (distanciaPercorrida > 50 &&  <= 150) {
                 velocidadeAtual = 130;
-            }else if(distanciaPercorrida > 150 ){
+            } else if (distanciaPercorrida > 150) {
                 velocidadeAtual = 100;
             }
         }
-    
-    
+        return velocidadeAtual;
+
     }
 
-    public void imprimeOsDados(){
+    public void imprimeOsDados() {
 
-
-}
+    }
 }

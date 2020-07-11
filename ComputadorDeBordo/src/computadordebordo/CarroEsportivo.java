@@ -1,13 +1,14 @@
 package computadordebordo;
 
-public class CarroEsportivo extends Veiculos{
-   boolean turboLigado = false;
+public class CarroEsportivo extends Veiculo {
 
-   
-   public CarroEsportivo(){
-       
+    boolean turboLigado = false;
+
+    public CarroEsportivo(String modelo, String cor, String ano, double velocidadeAtual, double combustivel, boolean esportivo) {
+        super(modelo, cor, ano, velocidadeAtual, combustivel, esportivo);
     }
- public boolean getTurboLigado() {
+
+    public boolean isTurboLigado() {
         return turboLigado;
     }
 
@@ -15,6 +16,4 @@ public class CarroEsportivo extends Veiculos{
         this.turboLigado = turboLigado;
     }
 
-      
 }
-
