@@ -97,8 +97,32 @@ public class Veiculo {
     }
     double atualizaVelocidade(){
         
-        if(veiculos == carroEsportivo)
+        if(veiculo == carroEsportivo){
+          if(distanciaPercorrida <= 50){
+              velocidadeAtual = 80;
+          }else if(distanciaPercorrida >= 51 && <= 150){
+              turbo = true;
+              velocidadeAtual = 150;
+              
+          }else if(distanciaPercorrida > 150 ){
+              velocidadeAtual = 100;
+          }
+        
+        }else{
+            if(distanciaPercorrida <= 50){
+                velocidadeAtual = 80;
+            }else if(distanciaPercorrida >50 && <= 150 ){
+                velocidadeAtual = 130;
+            }else if(distanciaPercorrida > 150 ){
+                velocidadeAtual = 100;
+            }
+        }
     
     
     }
+
+    public void imprimeOsDados(){
+
+
+}
 }
