@@ -1,21 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package computadordebordo;
 
-/**
- *
- * @author Ezio
- */
 public class ComputadorDeBordo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
+         veiculos carro1 = new veiculos ("Gol","Branco","2002", 0 , 45.0));
+         viagemCarro viagemCarro1 = new viagemCarro ("Joinville", "Florianopolis", 250);
+         percorrer();
+         
+         carroEsportivo carro2 = new carroEsportivo("Golf","Vermelho","2018", 0 , 35.0);
+         viagemCarro viagemCarro2 = new viagemCarro ("Joinville", "Florianopolis", 250); 
+         percorrer();
     }
     
 }
