@@ -77,7 +77,7 @@ public class Veiculo {
             } else if (velocidadeAtual > 120) {
                 consumo = 0.6;
             }
-            if (isTurboLigado() == true) {
+            if (turboLigado == true) {
                 consumo = consumo * 2;
             }
           //  return consumo;
@@ -117,24 +117,27 @@ public class Veiculo {
 
     double atualizaVelocidade() {
 
-        if (veiculo == carroEsportivo) {
-            if (distanciaPercorrida <= 50) {
-                velocidadeAtual = 80;
+        if (this.veiculo == carroEsportivo) {
+            if (this.distanciaPercorrida <= 50) {
+                this.setVelocidadeAtual(80);
             } else if (distanciaPercorrida >= 51 &&  <= 150) {
-                turbo = true;
-                velocidadeAtual = 150;
+               // turbo = true;
+               // turboLigado = true;
+                this.setTurboLigado(true);
+                
+                this.setVelocidadeAtual(150);
 
-            } else if (distanciaPercorrida > 150) {
-                velocidadeAtual = 100;
+            } else if (this.distanciaPercorrida > 150) {
+                this.setVelocidadeAtual(100);
             }
 
         } else {
             if (distanciaPercorrida <= 50) {
-                velocidadeAtual = 80;
+                this.setVelocidadeAtual(80);
             } else if (distanciaPercorrida > 50 &&  <= 150) {
-                velocidadeAtual = 130;
+                this.setVelocidadeAtual(130);
             } else if (distanciaPercorrida > 150) {
-                velocidadeAtual = 100;
+                this.setVelocidadeAtual(100);
             }
         }
         return velocidadeAtual;
