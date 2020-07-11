@@ -1,9 +1,9 @@
 package computadordebordo;
 
 public class ViagemCarro {
-
-    private String destino;
+    
     private String origem;
+    private String destino;
     private double distanciaTotal;
     private double distanciaPercorrida = 0;
     private double GastoCombustivel = 0;
